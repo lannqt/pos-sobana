@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
-import { toast } from 'sonner';
+// import { toast } from 'sonner';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { jenisBarangOptions, kemasanOptions, satuanOptions } from '@/types/var';
 
@@ -60,15 +60,16 @@ export default function CreateBarang() {
 
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
-        post(route('mstBarang.store'), {
-            onSuccess: () => {
-                toast.success('Barang berhasil disimpan!');
-            },
-            onError: (errors) => {
-                const msg = errors?.msg || 'Gagal menyimpan barang.';
-                toast.error(msg);
-            },
-        });
+        // post(route('mstBarang.store'), {
+        //     onSuccess: () => {
+        //         toast.success('Barang berhasil disimpan!');
+        //     },
+        //     onError: (errors) => {
+        //         const msg = errors?.msg || 'Gagal menyimpan barang.';
+        //         toast.error(msg);
+        //     },
+        // });
+        post(route('mstBarang.store'));
     };
 
     const getDetailError = (key: keyof NewBarang['detail']) => {
